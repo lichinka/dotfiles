@@ -1,0 +1,67 @@
+#
+# urxvt terminal configuration entries
+#
+URxvt.jumpScroll:		true
+URxvt.secondaryScroll:		true
+URxvt.loginShell:		true
+URxvt.background:		Black
+URxvt.foreground:		White
+URxvt.scrollBar:		false
+URxvt.scrollTtyOutput:		false
+URxvt.scrollWithBuffer:		true
+URxvt.scrollTtyKeypress:	true
+URxvt.fading:			5
+#URxvt.font:			    xft:DejaVu LGC Sans Mono:antialias=true:pixelsize=18
+#URxvt.boldFont:			xft:DejaVu LGC Sans Mono:bold:antialias=true:pixelsize=18
+#URxvt.italicFont:		    xft:DejaVu LGC Sans Mono:italic:antialias=true:pixelsize=18
+#URxvt.boldItalicFont:	    xft:DejaVu LGC Sans Mono:bold:italic:antialias=true:pixelsize=18
+URxvt.font:			        xft:Lucida Console:antialias=true:pixelsize=18
+URxvt.boldFont:			    xft:Lucida Console:bold:antialias=true:pixelsize=18
+URxvt.italicFont:		    xft:Lucida Console:italic:antialias=true:pixelsize=18
+URxvt.boldItalicFont:	    xft:Lucida Console:bold:italic:antialias=true:pixelsize=18
+URxvt.internalBorder:		3
+URxvt.externalBorder:		0
+URxvt.saveLines:		8192
+URxvt.mapAlert:			true
+URxvt.geometry:			100x25
+URxvt.tripleclickwords:		true
+URxvt.pastableTabs:		true
+URxvt.cursorBlink:		true
+URxvt.pointerBlank:		true
+
+! perl stuff
+URxvt.perl-ext-common:      default,matcher
+URxvt.urlLauncher:          firefox
+URxvt.matcher.button:       1
+
+! Black + DarkGrey
+URxvt*color0:       #000000
+URxvt*color8:       #666666
+
+! DarkRed + Red
+URxvt*color1:       #b45151
+URxvt*color9:       #fe8686
+
+! DarkGreen + Green
+URxvt*color2:       #aece92
+URxvt*color10:      #c5ee83
+
+! DarkYellow + Yellow
+URxvt*color3:       #cbbba0
+URxvt*color11:      #efe58b
+
+! DarkBlue + Blue
+URxvt*color4:       #2797d8
+URxvt*color12:      #86cdea
+
+! DarkMangenta + Mangenta
+URxvt*color5:       #aa6eaf
+URxvt*color13:      #cb96ce
+
+!DarkCyan + Cyan
+URxvt*color6:       #418179
+URxvt*color14:      #71bebe
+
+! LightGrey + White
+URxvt*color7:       #bebebe
+URxvt*color15:      #ffffff
