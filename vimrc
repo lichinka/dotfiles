@@ -1,9 +1,9 @@
 "
 " Pathogen load (for python-mode bundle)
 "
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
+"filetype off
+"call pathogen#infect()
+"call pathogen#helptags()
 
 filetype off
 filetype plugin indent on
@@ -17,6 +17,7 @@ if has('gui_running')
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=l  "remove left-hand scroll bar
 endif
 
 "
@@ -162,3 +163,10 @@ set hlsearch
 set incsearch
 set showmatch
 
+"
+" MiniBufExpl options
+"
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1 
