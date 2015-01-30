@@ -1,6 +1,15 @@
-#
-# urxvt terminal configuration entries
-#
+!
+! urxvt: keyboard shorcut activation
+!
+URxvt.perl-ext-common: default,matcher,keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.urlLauncher: vimb
+URxvt.matcher.button: 1
+
+!
+! urxvt terminal: look and feel configuration 
+!
 URxvt.jumpScroll:		true
 URxvt.secondaryScroll:		true
 URxvt.loginShell:		true
@@ -11,10 +20,6 @@ URxvt.scrollTtyOutput:		false
 URxvt.scrollWithBuffer:		true
 URxvt.scrollTtyKeypress:	true
 URxvt.fading:			5
-#URxvt.font:			    xft:DejaVu LGC Sans Mono:antialias=true:pixelsize=18
-#URxvt.boldFont:			xft:DejaVu LGC Sans Mono:bold:antialias=true:pixelsize=18
-#URxvt.italicFont:		    xft:DejaVu LGC Sans Mono:italic:antialias=true:pixelsize=18
-#URxvt.boldItalicFont:	    xft:DejaVu LGC Sans Mono:bold:italic:antialias=true:pixelsize=18
 URxvt.font:			        xft:Lucida Console:antialias=true:pixelsize=18
 URxvt.boldFont:			    xft:Lucida Console:bold:antialias=true:pixelsize=18
 URxvt.italicFont:		    xft:Lucida Console:italic:antialias=true:pixelsize=18
@@ -28,11 +33,6 @@ URxvt.tripleclickwords:		true
 URxvt.pastableTabs:		true
 URxvt.cursorBlink:		true
 URxvt.pointerBlank:		true
-
-! perl stuff
-URxvt.perl-ext-common:      default,matcher
-URxvt.urlLauncher:          firefox
-URxvt.matcher.button:       1
 
 ! Black + DarkGrey
 URxvt*color0:       #000000

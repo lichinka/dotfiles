@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="fishy"
+ZSH_THEME="terminalparty"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -16,7 +16,7 @@ ZSH_THEME="fishy"
 CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -48,5 +48,5 @@ bindkey '\e' vi-cmd-mode
 # Variables
 #
 export EDITOR=$(which vim)
-export BROWSER="firefox"
-export PAGER="vimpager"
+export BROWSER=$(which vimb)
+export PAGER=$(which vimpager)
