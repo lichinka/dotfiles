@@ -48,5 +48,5 @@ bindkey '\e' vi-cmd-mode
 # Variables
 #
 export EDITOR=$(which vim)
-export BROWSER=$(which vimb)
+export BROWSER=$(which firefox)
 export PAGER=$(which vimpager)
