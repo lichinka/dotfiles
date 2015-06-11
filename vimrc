@@ -3,7 +3,6 @@
 "
 set nocompatible              " be iMproved, required
 filetype off                  " required
-filetype plugin indent on     " required
 syntax on
 
 " set the runtime path to include Vundle and initialize
@@ -26,6 +25,7 @@ Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
