@@ -30,7 +30,7 @@ My current set of configuration files for URxvt, Z shell and Vim.-
 3.2. We'll create a new folder where build files will be placed. Run the
      following:
 
-     ```shell
+     ```
       cd /tmp
       mkdir ycm_build
       cd ycm_build
@@ -38,13 +38,13 @@ My current set of configuration files for URxvt, Z shell and Vim.-
 
 3.3. Run the following command in the `ycm_build` directory:
 
-     ```shell
+     ```
       cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
      ```
 
 3.4. Now that makefiles have been generated, simply run:
 
-     ```shell
+     ```
       make ycm_support_libs
      ```
 
