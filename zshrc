@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="terminalparty"
+ZSH_THEME="mrtazz"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -15,7 +15,7 @@ ZSH_THEME="terminalparty"
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Uncomment this out to disable weekly auto-update checks
 DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
@@ -27,10 +27,15 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
+#
+# Enable Vi-mode with ESC in shell
+#
+bindkey '\e' vi-cmd-mode
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,11 +43,6 @@ source $ZSH/oh-my-zsh.sh
 # Turn off annoying auto-correction
 #
 unsetopt correct_all
-
-#
-# Enable Vi-mode with ESC in shell
-#
-bindkey '\e' vi-cmd-mode
 
 #
 # Variables
