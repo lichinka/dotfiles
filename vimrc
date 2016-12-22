@@ -3,6 +3,7 @@
 "
 set nocompatible              " be iMproved, required
 filetype off                  " required
+filetype plugin indent on     " required
 syntax on
 
 " set the runtime path to include Vundle and initialize
@@ -18,14 +19,12 @@ Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
-Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -44,8 +43,8 @@ filetype plugin indent on    " required
 " GUI settings
 "
 if has('gui_running')
-  set guifont=Lucida\ Console\ Semi-Condensed\ 14
-  set guioptions-=m  "remove menu bar
+  set guifont=DejaVu\ Sans\ Mono\ 12
+  "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=l  "remove left-hand scroll bar
@@ -53,6 +52,7 @@ endif
 
 "
 "colorscheme slate
+"
 colorscheme desert
 set number
 set tabstop=4
@@ -64,6 +64,7 @@ set foldmethod=syntax
 
 "
 "additoins
+"
 set title
 set wildmenu
 set completeopt=menuone,preview
