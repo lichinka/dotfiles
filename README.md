@@ -12,8 +12,9 @@ My current set of configuration files for URxvt, Z shell and Vim.-
 
 2. Install the plugins:
 
-   Launch `vim` and run `:PluginInstall`
+   Launch `vim` and run `:BundleInstall`
 
+### Manually installing YouCompleteMe in case of failure
 3. Enable semantic completion support for C-family languages in YCM.
 
 3.1. Compile the `ycm_support_libs` libraries that YCM needs. These libs
