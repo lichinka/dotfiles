@@ -1,10 +1,27 @@
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
 !
 ! urxvt: keyboard shorcut activation
 !
 URxvt.perl-ext-common: default,matcher,keyboard-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.urlLauncher: vimb
+URxvt.urlLauncher: firefox --private-window
 URxvt.matcher.button: 1
 
 !
@@ -20,10 +37,10 @@ URxvt.scrollTtyOutput:		false
 URxvt.scrollWithBuffer:		true
 URxvt.scrollTtyKeypress:	true
 URxvt.fading:			5
-URxvt.font:			        xft:Lucida Console:antialias=true:pixelsize=18
-URxvt.boldFont:			    xft:Lucida Console:bold:antialias=true:pixelsize=18
-URxvt.italicFont:		    xft:Lucida Console:italic:antialias=true:pixelsize=18
-URxvt.boldItalicFont:	    xft:Lucida Console:bold:italic:antialias=true:pixelsize=18
+URxvt.font:			        xft:Liberation Mono:regular:pixelsize=14
+URxvt.boldFont:			    xft:Liberation Mono:bold:pixelsize=14
+URxvt.italicFont:		    xft:Liberation Mono:italic:pixelsize=14
+URxvt.boldItalicFont:	    xft:Liberation Mono:bold:italic:pixelsize=14
 URxvt.internalBorder:		3
 URxvt.externalBorder:		0
 URxvt.saveLines:		8192
