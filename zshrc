@@ -22,10 +22,10 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 #
 # Enable Vi-mode with ESC in shell
@@ -48,5 +48,16 @@ unsetopt correct_all
 # Variables
 #
 export EDITOR=$(which vim)
-export BROWSER=$(which firefox)
+export BROWSER=$(which qutebrowser)
 export PAGER=$(which vimpager)
+
+#
+# Start the SSH agent to cache keys
+#
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
