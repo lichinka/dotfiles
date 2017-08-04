@@ -22,6 +22,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'rking/ag.vim'
+Plugin 'joonty/vdebug'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
