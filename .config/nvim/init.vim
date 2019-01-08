@@ -2,7 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'techlivezheng/vim-plugin-minibufexpl'
+Plug 'fholgado/minibufexpl.vim'
 Plug 'rking/ag.vim'
 "Plug 'joonty/vdebug'
 call plug#end()
