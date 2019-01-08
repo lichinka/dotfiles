@@ -51,11 +51,6 @@ DISABLE_AUTO_UPDATE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-#
-# Enable Vi-mode with ESC in shell
-#
-bindkey '\e' vi-cmd-mode
-
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -66,6 +61,13 @@ plugins=(
   syntax-highlighting
   history-substring-search
 )
+
+#
+# Enable Vi-mode with ESC in shell
+#
+bindkey '\e'   vi-cmd-mode
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
 
 source $ZSH/oh-my-zsh.sh
 
