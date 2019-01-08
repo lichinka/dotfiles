@@ -37,10 +37,11 @@ URxvt.scrollTtyOutput:		false
 URxvt.scrollWithBuffer:		true
 URxvt.scrollTtyKeypress:	true
 URxvt.fading:			5
-URxvt.font:			        xft:Liberation Mono:regular:pixelsize=14
-URxvt.boldFont:			    xft:Liberation Mono:bold:pixelsize=14
-URxvt.italicFont:		    xft:Liberation Mono:italic:pixelsize=14
-URxvt.boldItalicFont:	    xft:Liberation Mono:bold:italic:pixelsize=14
+!URxvt.font:			        xft:Liberation Mono:regular:pixelsize=15
+!URxvt.boldFont:			    xft:Liberation Mono:bold:pixelsize=15
+!URxvt.italicFont:		    xft:Liberation Mono:italic:pixelsize=15
+!URxvt.boldItalicFont:	    xft:Liberation Mono:bold:italic:pixelsize=15
+URxvt.font:			        xft:DejaVu Sans Mono:autohint=true:size=12,xft:Inconsolata\ for\ Powerline:autohint=true:size=12
 URxvt.internalBorder:		3
 URxvt.externalBorder:		0
 URxvt.saveLines:		8192
