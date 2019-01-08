@@ -12,7 +12,6 @@ call plug#end()
 "
 filetype plugin indent on
 syntax on
-colorscheme evening
 set number
 set tabstop=4
 set shiftwidth=4
