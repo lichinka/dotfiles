@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-My current set of configuration files for URxvt, ZSh (using (Prezto)[https://github.com/sorin-ionescu/prezto] and Vim.-
+My current set of configuration files for URxvt, ZSh (using [Prezto](https://github.com/sorin-ionescu/prezto)) and Vim.-
 
 
 ## For VIM
