@@ -1,0 +1,43 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Bind keys for history search
+bindkey '\eOA' history-substring-search-up # or ^[OA
+bindkey '\eOB' history-substring-search-down # or ^[OB
+
+# Customize to your needs...
+
+# Variables
+export EDITOR=$( which nvim )
+export BROWSER=$( which qutebrowser )
+export PAGER=$( which vimpager )
+export TERM='xterm-256color'
+export TERMCMD='terminal'
+
+# Start the SSH agent to cache keys
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent-thing)"
+fi
+
+# GoLang
+export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin"
+
+# Miniconda shell integration
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# Spack
+export SPACK_ROOT=${HOME}/spack
+. ${HOME}/spack/share/spack/setup-env.sh
