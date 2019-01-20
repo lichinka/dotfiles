@@ -1,0 +1,42 @@
+[general]
+# Path to file with arbitrary Python code to be loaded
+pythonfile = ~/.offlineimap/offlineimap.py
+# Controls how many accounts may be synced simultaneously
+maxsyncaccounts = 1
+# List of accounts to be synced, separated by a comma.
+accounts = symbio
+
+[Account symbio]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = symbio-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = symbio-remote
+# Minutes between syncs
+autorefresh = 0.5
+# Quick-syncs do not update if the only changes were to IMAP flags.
+# autorefresh=0.5 together with quick=10 yields
+# 10 quick refreshes between each full refresh, with 0.5 minutes between every 
+# refresh, regardless of type.
+quick = 10
+
+[Repository symbio-local]
+# OfflineIMAP supports Maildir, GmailMaildir, and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/mail/symbio
+
+[Repository symbio-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = IMAP
+remotehost = <remotehost>
+remoteport = <remoteport>
+remoteuser = <remoteuser>
+starttls = yes
+ssl = no
+# This function is defined in the 'pythonfile' option above
+remotepasseval = get_pass(<remotepass>)
+folderfilter = lambda foldername: foldername not in ['Boxer.To-do',
+                                                     'Boxer',
+                                                     'Junk',
+                                                     'Sent',
+                                                     'Trash']
