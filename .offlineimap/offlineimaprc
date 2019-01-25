@@ -2,9 +2,48 @@
 # Path to file with arbitrary Python code to be loaded
 pythonfile = ~/.offlineimap/offlineimap.py
 # Controls how many accounts may be synced simultaneously
-maxsyncaccounts = 1
+maxsyncaccounts = 2
 # List of accounts to be synced, separated by a comma.
-accounts = symbio
+accounts = cscs
+
+[Account cscs]
+localrepository = cscs-local
+remoterepository = cscs-remote
+autorefresh = 5
+quick = 10
+postsynchook = ~/.offlineimap/postsynchook_cscs.sh
+
+[Repository cscs-local]
+type = Maildir
+localfolders = ~/mail/cscs
+sep = /
+
+[Repository cscs-remote]
+type = IMAP
+remotehost = <host>
+remoteport = <port>
+remoteuser = <user>
+starttls = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl = yes
+# 'get_pass' is defined in the 'pythonfile' option above
+remotepasseval = get_pass("<pass>")
+createfolders = False
+nametrans = lambda foldername: re.sub ('Sent Items', 'sent',
+                               re.sub ('Deleted Items', 'trash',
+                               re.sub (' ', '_', foldername.lower())))
+folderfilter = lambda foldername: foldername not in ['Calendar',
+                                                     'Contacts',
+                                                     'Correo no deseado',
+                                                     'Deleted Items',
+                                                     'Journal',
+                                                     'Notes',
+                                                     'Outbox',
+                                                     'Queue',
+                                                     'Sent Items',
+                                                     'Tasks',
+                                                     'Trash']
+
 
 [Account symbio]
 # Identifier for the local repository; e.g. the maildir to be synced via IMAP.
@@ -12,12 +51,13 @@ localrepository = symbio-local
 # Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
 remoterepository = symbio-remote
 # Minutes between syncs
-autorefresh = 0.5
+autorefresh = 5
 # Quick-syncs do not update if the only changes were to IMAP flags.
 # autorefresh=0.5 together with quick=10 yields
-# 10 quick refreshes between each full refresh, with 0.5 minutes between every 
+# 10 quick refreshes between each full refresh, with 5 minutes between every 
 # refresh, regardless of type.
 quick = 10
+postsynchook = ~/.offlineimap/postsynchook_symbio.sh
 
 [Repository symbio-local]
 # OfflineIMAP supports Maildir, GmailMaildir, and IMAP for local repositories.
@@ -28,13 +68,13 @@ localfolders = ~/mail/symbio
 [Repository symbio-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 type = IMAP
-remotehost = <remotehost>
-remoteport = <remoteport>
-remoteuser = <remoteuser>
+remotehost = <host>
+remoteport = <port>
+remoteuser = <user>
 starttls = yes
 ssl = no
 # This function is defined in the 'pythonfile' option above
-remotepasseval = get_pass(<remotepass>)
+remotepasseval = get_pass("<pass>")
 folderfilter = lambda foldername: foldername not in ['Boxer.To-do',
                                                      'Boxer',
                                                      'Junk',
