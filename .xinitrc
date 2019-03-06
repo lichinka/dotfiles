@@ -36,11 +36,6 @@ unset QT_STYLE_OVERRIDE
 xrandr --output DP2-2 --mode 1920x1200 --output DP2-1 --mode 1920x1200 --right-of DP2-2 --output eDP1 --mode 1920x1080 --right-of DP2-1
 
 #
-# SSH agent to keep track of SSH keys
-#
-eval $( ssh-agent )
-
-#
 # Tiling window manager
 #
 exec i3

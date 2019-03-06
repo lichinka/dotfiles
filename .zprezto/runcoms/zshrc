@@ -16,13 +16,6 @@ bindkey '\eOB' history-substring-search-down # or ^[OB
 
 # Customize to your needs...
 
-# Variables
-export EDITOR=$( which nvim )
-export BROWSER=$( which qutebrowser )
-export PAGER=$( which vimpager )
-export TERM='xterm-256color'
-export TERMCMD='terminal'
-
 # GoLang
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"

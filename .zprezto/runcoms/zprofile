@@ -19,6 +19,8 @@ fi
 #
 export EDITOR=$( which nvim )
 export PAGER=$( which vimpager )
+export TERM='xterm-256color'
+export TERMCMD='terminal'
 
 #
 # Language
@@ -59,3 +61,8 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+#
+# Keychain - keep track of SSH keys
+#
+eval $( keychain --eval --quiet id_ed25519_gitlab )
