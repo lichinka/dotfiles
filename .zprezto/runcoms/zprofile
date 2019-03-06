@@ -63,6 +63,11 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 #
-# Keychain - keep track of SSH keys
+# Gnome keyring - keep track of SSH keys
 #
-eval $( keychain --eval --quiet id_ed25519_gitlab )
+# https://wiki.archlinux.org/index.php/GNOME/Keyring#SSH_keys
+#
+if [ -n "$DESKTOP_SESSION" ];then
+	eval $( gnome-keyring-daemon --start )
+    export SSH_AUTH_SOCK
+fi
