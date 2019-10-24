@@ -18,10 +18,12 @@ Xft.lcdfilter: lcddefault
 !
 ! urxvt: keyboard shorcut activation
 !
-URxvt.perl-ext-common: default,matcher,keyboard-select
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher: firefox --private-window
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.urlLauncher: firefox --private-window
 URxvt.matcher.button: 1
 
 !
@@ -37,10 +39,6 @@ URxvt.scrollTtyOutput:		false
 URxvt.scrollWithBuffer:		true
 URxvt.scrollTtyKeypress:	true
 URxvt.fading:			5
-!URxvt.font:			        xft:Liberation Mono:regular:pixelsize=15
-!URxvt.boldFont:			    xft:Liberation Mono:bold:pixelsize=15
-!URxvt.italicFont:		    xft:Liberation Mono:italic:pixelsize=15
-!URxvt.boldItalicFont:	    xft:Liberation Mono:bold:italic:pixelsize=15
 URxvt.font:			        xft:DejaVu Sans Mono:autohint=true:size=12,xft:Inconsolata\ for\ Powerline:autohint=true:size=12
 URxvt.internalBorder:		3
 URxvt.externalBorder:		0
