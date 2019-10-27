@@ -49,7 +49,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-exec --no-startup-id pulseaudio --start
+#exec --no-startup-id pulseaudio --start
 exec --no-startup-id pasystray
 
 ################################################################################################
@@ -297,7 +297,7 @@ exec_always --no-startup-id fix_xcursor
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	status_command py3status -c ~/.i3status.conf
+	status_command py3status -c ~/.config/py3status/config
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
