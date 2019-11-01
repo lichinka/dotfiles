@@ -15,8 +15,8 @@ general {
 }
 
 order += "cpu_usage"
+order += "lm_sensors"
 order += "disk /"
-# order += "disk /home"
 order += "net_iplist"
 order += "backlight"
 order += "wifi"
@@ -25,12 +25,14 @@ order += "battery_level"
 order += "tztime local"
 
 cpu_usage {
-        format = " cpu  %usage "
+        format = " %usage "
 }
 
-load {
-        format = " load %1min "
-        # max_threshold = 0.3
+lm_sensors {
+    format_chip = '[\?if=name=coretemp-isa-0000 CPU ]'
+    format_chip += '{format_sensor}'
+    format_sensor = '\?color=auto.input {input}°C'
+    sensors = ['core*']
 }
 
 disk "/" {
