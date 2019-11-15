@@ -40,8 +40,8 @@ disk "/" {
 }
 
 net_iplist {
-    format = "{format_iface}"
-    format_iface = "{iface} \[{ip4}\]"
+    color_good = '#CCFFCC'
+    format_iface = "{iface}:[ {ip4}] \|[ {ip6}]"
 }
 
 backlight {
