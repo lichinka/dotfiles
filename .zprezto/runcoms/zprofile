@@ -29,6 +29,23 @@ if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
 
+
+#
+# Gnome keyring - keep track of SSH keys
+#
+# https://wiki.archlinux.org/index.php/GNOME/Keyring#SSH_keys
+#
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $( gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg )
+    export SSH_AUTH_SOCK
+fi
+
+#
+# Configuring VDPAU
+# (see https://wiki.archlinux.org/index.php/Hardware_video_acceleration#Configuring_VDPAU)
+#
+export VDPAU_DRIVER=va_gl
+
 #
 # Paths
 #
@@ -60,14 +77,4 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 # Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
-fi
-
-#
-# Gnome keyring - keep track of SSH keys
-#
-# https://wiki.archlinux.org/index.php/GNOME/Keyring#SSH_keys
-#
-if [ -n "$DESKTOP_SESSION" ];then
-	eval $( gnome-keyring-daemon --start )
-    export SSH_AUTH_SOCK
 fi
