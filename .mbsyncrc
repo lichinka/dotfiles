@@ -1,28 +1,25 @@
-IMAPAccount cscs
-Host        xxx
-Port        993
-User        xxx
-PassCmd     xxx
-SSLType     IMAPS
+IMAPStore cscs-remote
+Host xxx
+Port  xxx
+User xxx
+PassCmd xxx
+SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore cscs-remote
-Account cscs
-
-# The local storage we'll be using. Note the trailing slash at the end of the Path!
 MaildirStore cscs-local
-# The trailing "/" is important
-Path ~/mail/cscs/
-Inbox ~/mail/cscs/Inbox
-SubFolders Verbatim
+Subfolders Verbatim
+Path ~/.local/share/mail/cscs/
+Inbox ~/.local/share/mail/cscs/INBOX
+Flatten .
 
-# This is where the magic happens. Note Sync is set to 'Pull' now -- we'll set it to 'Push' later!
-Channel cscs 
+Channel cscs
+Expunge Both
 Master :cscs-remote:
 Slave :cscs-local:
-# Include everything
-Patterns *
-# Automatically create missing mailboxes, both locally and on the server
-Create Slave
-# Save the synchronization state files in the relevant directory
+Patterns * !"[Gmail]/All Mail"
+Create Both
 SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
