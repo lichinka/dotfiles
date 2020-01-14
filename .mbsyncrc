@@ -23,3 +23,28 @@ MaxMessages 0
 ExpireUnread no
 # End profile
 
+IMAPStore lxb-remote
+Host xxx
+Port  xxx
+User xxx
+PassCmd xxx
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore lxb-local
+Subfolders Verbatim
+Path ~/.local/share/mail/lxb/
+Inbox ~/.local/share/mail/lxb/INBOX
+Flatten .
+
+Channel lxb
+Expunge Both
+Master :lxb-remote:
+Slave :lxb-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
