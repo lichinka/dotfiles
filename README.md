@@ -15,9 +15,3 @@ My current set of configuration files for URxvt, ZSh (using [Prezto](https://git
 2. Install the plugins:
 
    Launch `nvim` and run `:PlugInstall`
-
-## For OfflineIMAP
-1. Launch it from a terminal:
-    ```
-    $ offlineimap -c ~/.offlineimap/offlineimaprc -l ~/.offlineimap/offlineimap.log
-    ```
