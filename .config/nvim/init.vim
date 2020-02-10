@@ -2,16 +2,15 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'fholgado/minibufexpl.vim'
+Plug 'techlivezheng/vim-plugin-minibufexpl'
 Plug 'rking/ag.vim'
-"Plug 'joonty/vdebug'
 call plug#end()
 
 "
 " Common settings
 "
-filetype plugin indent on
 syntax on
+filetype plugin indent on
 set number
 set tabstop=4
 set shiftwidth=4
@@ -24,7 +23,7 @@ let g:mapleader=','
 nnoremap <Leader>s :%s//g<Left><Left>
 
 "
-" Use deoplete
+" Use deoplete's code completion
 "
 let g:deoplete#enable_at_startup = 1
 
@@ -141,23 +140,3 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
-
-""
-"" VDebug options
-""
-"" Allows Vdebug to bind to all interfaces.
-"let g:vdebug_options = {}
-"
-"" Stops execution at the first line.
-"let g:vdebug_options['break_on_open'] = 1
-"let g:vdebug_options['max_children'] = 128
-"
-"" Use the compact window layout.
-"let g:vdebug_options['watch_window_style'] = 'compact'
-"
-"" Need to set as empty for this to work with Vagrant boxes.
-"let g:vdebug_options['server'] = ""
-"let g:vdebug_options['port'] = "9009"
-"
-"" Mapping '/remote/path' : '/local/path'
-"let g:vdebug_options['path_maps'] = {'/var/www/f3/' : '/home/luka/ownCloud/etc/delaius/www/f3/public_html/'}
