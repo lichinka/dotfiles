@@ -18,13 +18,18 @@ Xft.lcdfilter: lcddefault
 !
 ! urxvt: keyboard shorcut activation
 !
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.perl-ext-common: default,resize-font,url-select,keyboard-select
 URxvt.url-select.launcher: firefox --private-window
 URxvt.url-select.underline: true
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.matcher.button: 1
+!
+! resize-font script: https://github.com/simmel/urxvt-resize-font
+! 
+URxvt.resize-font.bigger: C-k
+URxvt.resize-font.smaller: C-j
 
 !
 ! urxvt terminal: look and feel configuration 
@@ -32,7 +37,7 @@ URxvt.matcher.button: 1
 URxvt.jumpScroll:		true
 URxvt.secondaryScroll:		true
 URxvt.loginShell:		true
-URxvt.background:		Black
+URxvt.background:		#002b36
 URxvt.foreground:		White
 URxvt.scrollBar:		false
 URxvt.scrollTtyOutput:		false
