@@ -4,6 +4,7 @@ Port  xxx
 User xxx
 PassCmd xxx
 SSLType IMAPS
+AuthMechs PLAIN
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore cscs-local
@@ -14,8 +15,8 @@ Flatten .
 
 Channel cscs
 Expunge Both
-Master :cscs-remote:
-Slave :cscs-local:
+Far :cscs-remote:
+Near :cscs-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
@@ -39,8 +40,8 @@ Flatten .
 
 Channel lxb
 Expunge Both
-Master :lxb-remote:
-Slave :lxb-local:
+Far :lxb-remote:
+Near :lxb-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
