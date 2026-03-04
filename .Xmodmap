@@ -1,0 +1,8 @@
+! Clear the current mapping of Caps Lock
+clear lock
+
+! Set Caps Lock to act as Ctrl
+keycode 66 = Control_L
+
+! Add the new key to the Control modifier group
+add control = Control_L
