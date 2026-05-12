@@ -4,7 +4,7 @@ My configuration files for:
 
 - **i3** window manager
 - **Polybar** status bar
-- **zsh** with Prezto framework
+- **zsh** with OMZ
 - **rofi** application launcher
 - **Xmodmap** key remapping
 
