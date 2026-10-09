@@ -51,8 +51,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec kitty
+## start a terminal
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -204,5 +204,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh --shapes
 for_window [class="^.*"] border pixel 1
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/etc/back12.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/etc/back13.jpg
 
+# Notification daemon
+exec_always --no-startup-id sh -c 'dunst 2>> $HOME/.cache/dunst.log &'
