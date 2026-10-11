@@ -4,8 +4,9 @@ My configuration files for:
 
 - **i3** window manager
 - **Polybar** status bar
-- **zsh** with OMZ
 - **rofi** application launcher
+- **zsh** with OMZ
+- **Ghostty**
 - **Xmodmap** key remapping
 
-Files are located in `~/.config/` and the home directory.
+All files in this repo are relative to the home directory.
