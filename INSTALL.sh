@@ -62,14 +62,6 @@ done
 #
 # ZSH
 #
-echo -n "### Checking if shell is zsh ... "
-if [[ "$( getent passwd "$USER" | cut -d: -f7 )" == "$( command -v zsh )" ]]; then
-   echo "found!"
-else
-   echo "no. Changing ..."
-   echo "---> Setting shell to zsh"
-   chsh -s "$(command -v zsh)"
-fi
 echo -n "### Checking oh-my-zsh ... "
 OHMYZSH_FOLDER="${HOME}/.oh-my-zsh"
 if [[ -d "${OHMYZSH_FOLDER}" ]]; then
